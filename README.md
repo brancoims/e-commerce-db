@@ -2,43 +2,6 @@
 
 Este repositório contém a modelagem e os scripts de criação para um banco de dados básico de E-commerce. O objetivo principal é demonstrar a estrutura de tabelas, relacionamentos (chaves estrangeiras) e restrições de integridade através de código SQL puro.
 
-## 🛠️ Tecnologias Utilizadas
-* *Banco de Dados:* [Insira aqui o seu SGBD, ex: MySQL / PostgreSQL / SQLite]
-* *Linguagem:* SQL
-
-## 📐 Diagrama de Entidade-Relacionamento (DER)
-O próprio GitHub renderiza o diagrama abaixo com base na estrutura do banco:
-
-mermaid
-erDiagram
-    CLIENTE ||--o{ PEDIDO : "faz"
-    PRODUTO ||--o{ ITEM_PEDIDO : "contem"
-    PEDIDO ||--|{ ITEM_PEDIDO : "possui"
-
-    CLIENTE {
-        int id PK
-        string nome
-        string email UK
-    }
-    PRODUTO {
-        int id PK
-        string nome
-        decimal preco
-        int estoque
-    }
-    PEDIDO {
-        int id PK
-        int cliente_id FK
-        date data_pedido
-        decimal total
-    }
-    ITEM_PEDIDO {
-        int pedido_id FK
-        int produto_id FK
-        int quantidade
-        decimal preco_unitario
-    }
-
 
 ## 📂 Estrutura do Repositório
 * schema.sql: Contém os comandos de criação das tabelas, chaves primárias, chaves estrangeiras e regras (como UNIQUE e NOT NULL).
